@@ -9,6 +9,10 @@ const AppointmentSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'users'
     },
+    service:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'services'
+    },
     alert_time:{
         type: Number, //Number of hours before appointment to send alert
         default:24
@@ -21,11 +25,15 @@ const AppointmentSchema = mongoose.Schema({
         type: String,
         default: 'Sent'
     },
-    date_selected:{
-        type: {day: Number, fraction: Boolean}, //date: {1, 5} representing Monday and 5th option available
+    appointment_start:{
+        type: Date,
         required: true
     },
-    date:{
+    appointment_end:{
+        type: Date,
+        required: true
+    },
+    date_creation:{
         type: Date,
         default: Date.now
     }
