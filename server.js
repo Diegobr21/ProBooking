@@ -1,12 +1,12 @@
 const express = require('express');
-//const connectDB = require('./config/db')
+const connectDB = require('./config/db')
 //const path = require('path')
 
 
 const app = express();
 
 // Connect database
-//connectDB();
+connectDB();
 
 //Comment for production
 //app.get('/', (req, res) => res.json({msg: 'Welcome to Booking System API'}));
